@@ -1,18 +1,18 @@
 module i2s_transmitter
 (
-    input  logic clk,
+    input  logic clk, // 12.288 MHz
     input  logic rst,
-    input  logic [9:0] tone_half_period,
+    input  logic [7:0] wave_half_period,
 
     output logic bit_clock,
     output logic word_select,
-    output logic sound_data
+    output logic sound_data,
 
-    //output logic [5:0] bit_counter
+    output logic [4:0] bit_counter
 );
 
-    logic [1:0] bit_clock_timer; // 
-    logic [5:0] bit_counter; // keeps track of where we are in the I2S transmission loop
+    logic [1:0] bit_clock_timer; // divides 12.288 MHz MHz clock by 4 = 3.028 MHz
+    //logic [4:0] bit_counter; // keeps track of where we are in the I2S transmission loop
     logic [15:0] sound_bits; // holds
     logic [7:0] tone_timer; // the longest tone half-period should be 92 bit-clk cycles, so ~6.5 bits of space needed
 
@@ -26,7 +26,7 @@ module i2s_transmitter
             bit_clock_timer <= bit_clock_timer + 1;
             
             // Toggle clocks when timer rolls over
-            if  (bit_clock_timer == 0)     bit_clock <= !bit_clock; 
+            if (bit_clock_timer == 0) bit_clock <= ~bit_clock; 
         end
     end
 
@@ -39,9 +39,8 @@ module i2s_transmitter
             sound_bits <= 0;
         end
         else begin
-            // incrementation
-            if  (bit_counter == 31) bit_counter <= 0;
-            else                    bit_counter <= bit_counter + 1;
+            // incrementation –> because register is 0-31 (2^5), which is what we want, we let roll-over reset it to zero
+            bit_counter <= bit_counter + 1;
 
             // sound output
             /* 
@@ -57,16 +56,21 @@ module i2s_transmitter
             if  (bit_counter == 31) word_select <= 0; // transition to left channel right before LSB of left-channel audio
             if  (bit_counter == 15) word_select <= 1; // transition to right channel right before LSB of right-channel audio
 
-            // increment tone timer and periodically switch to send out low instead of high
-            // also increment bit clk timer
+            // (maybe) increment tone timer and periodically switch to send out low instead of high
+            // otherwise, put out no noise
             if  (bit_counter == 31) begin
-
-                bit_clock_timer <= bit_clock_timer + 1;
-
-                tone_timer <= tone_timer + 1;
-
-                if  (tone_timer < tone_half_period) sound_bits <= 16'b0111111111111111; // high
-                else                                sound_bits <= 16'b1000000000000000; // low
+                if (wave_half_period == 0) begin // no noise for not period
+                    sound_bits <= 0; // zero, no sound
+                    tone_timer <= 0;
+                end
+                else begin
+                    if (tone_timer >= wave_half_period) begin
+                        tone_timer <= 0;
+                        if (sound_bits == 16'b0111111111111111) sound_bits <= 16'b1000000000000000;
+                        else                                    sound_bits <= 16'b0111111111111111;
+                    end
+                    else tone_timer <= tone_timer + 1;
+                end
             end
         end
     end

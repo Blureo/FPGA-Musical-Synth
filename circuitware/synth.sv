@@ -1,6 +1,6 @@
 module synth
 (
-    input  logic master_clk,
+    input  logic master_clk, // 12.288 MHz
     input  logic reset,
 
     input  logic synth_key1,
@@ -18,7 +18,10 @@ module synth
 
     output logic i2s_sd,
     output logic i2s_ws,
-    output logic i2s_bclk
+    output logic i2s_bclk, // 3.028 MHz –> 48 kHz sample rate
+    output logic [4:0] bit_counter,
+
+    output logic [7:0] tone_half_period
 );
 
     logic debounced_key1;
@@ -34,9 +37,9 @@ module synth
     logic debounced_key11;
     logic debounced_key12;
 
-    logic [9:0] tone_half_period;
+    // logic [7:0] half_period;
 
-    wave_period_calculator tone_period_calculator
+    wave_period_selector tone_period_selector
     (
         .clk(master_clk),
         .rst(reset),
@@ -52,17 +55,18 @@ module synth
         .key10(debounced_key10),
         .key11(debounced_key11),
         .key12(debounced_key12),
-        .halfPeriodTotal(tone_half_period)
+        .current_half_period(tone_half_period)
     );
 
     i2s_transmitter transmitter
     (
         .clk(master_clk),
         .rst(reset),
-        .tone_half_period(tone_half_period),
+        .wave_half_period(tone_half_period),
         .bit_clock(i2s_bclk),
         .word_select(i2s_ws),
-        .sound_data(i2s_sd)
+        .sound_data(i2s_sd),
+        .bit_counter(bit_counter)
     );
 
 // key debouncing modules

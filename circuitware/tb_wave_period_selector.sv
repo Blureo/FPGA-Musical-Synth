@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_wave_period_calculator;
+module tb_wave_period_selector;
 
     real CLK_PERIOD = 1000.0 / 3.028;
 
@@ -20,7 +20,7 @@ module tb_wave_period_calculator;
     logic key12;
     logic [7:0] halfPeriod;
 
-    wave_period_calculator uut
+    wave_period_selector uut
     (
         .clk(clk),
         .rst(rst),
