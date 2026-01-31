@@ -16,7 +16,9 @@ module wave_period_selector
     input  logic key11,
     input  logic key12,
     
-    output logic [7:0] current_half_period
+    output logic [7:0] current_half_period,
+
+    output logic test_LED_R
 );
 
     /* NEED TO FIND WAVE TIME FOR EACH FREQUENCY
@@ -50,6 +52,7 @@ module wave_period_selector
     // calculate wave half-period
     always_comb begin
         next_half_period = 0;
+        test_LED_R = 1;
 
         if (key1) next_half_period = half_period_1;
         else if (key2)  next_half_period = half_period_2;
@@ -66,6 +69,8 @@ module wave_period_selector
         else next_half_period = 0;
 
         current_half_period = next_half_period;
+        if (current_half_period > 0) test_LED_R = 0;
     end
+
 
 endmodule

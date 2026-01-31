@@ -8,11 +8,14 @@ module i2s_transmitter
     output logic word_select,
     output logic sound_data,
 
-    output logic [4:0] bit_counter
+    output logic test_LED_B
+
+    // ONLY FOR SIMULATION
+    // output logic [4:0] bit_counter
 );
 
     logic [1:0] bit_clock_timer; // divides 12.288 MHz MHz clock by 4 = 3.028 MHz
-    //logic [4:0] bit_counter; // keeps track of where we are in the I2S transmission loop
+    logic [4:0] bit_counter; // keeps track of where we are in the I2S transmission loop
     logic [15:0] sound_bits; // holds
     logic [7:0] tone_timer; // the longest tone half-period should be 92 bit-clk cycles, so ~6.5 bits of space needed
 
@@ -33,10 +36,11 @@ module i2s_transmitter
     always_ff @(posedge bit_clock or negedge rst) begin
         if (!rst) begin
             bit_counter <= 31; // goes to 31, for 32 bits total, 16 bits each for left and right channels (right is silent in our case)
-            sound_data <= 0;
+            sound_data  <= 0;
             word_select <= 0;
-            tone_timer <= 0;
-            sound_bits <= 0;
+            tone_timer  <= 0;
+            sound_bits  <= 0;
+            test_LED_B  <= 1;
         end
         else begin
             // incrementation –> because register is 0-31 (2^5), which is what we want, we let roll-over reset it to zero
@@ -72,6 +76,8 @@ module i2s_transmitter
                     else tone_timer <= tone_timer + 1;
                 end
             end
+
+            //if (bit_counter == 14) test_LED_B <= ~test_LED_B;
         end
     end
 

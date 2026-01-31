@@ -1,19 +1,23 @@
 set_io master_clk   35
-set_io reset        9
+set_io reset        25
 
 set_io synth_key1   28
 set_io synth_key2   32
 set_io synth_key3   36
 set_io synth_key4   42
-set_io synth_key5   37
+set_io synth_key5   19
 set_io synth_key6   11
-set_io synth_key7   10
-set_io synth_key8   31
-set_io synth_key9   34
-set_io synth_key10  38
-set_io synth_key11  43
-set_io synth_key12  9
+set_io synth_key7   18
+set_io synth_key8   23
+set_io synth_key9   21
+set_io synth_key10  26
+set_io synth_key11  20
+set_io synth_key12  6
 
 set_io i2s_sd       47
 set_io i2s_ws       45
 set_io i2s_bclk     2
+
+set_io LED_R        41
+set_io LED_G        39
+set_io LED_B        40

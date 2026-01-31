@@ -7,9 +7,10 @@ module debouncer
 );
 
     // Parameter for the debounce delay.
-    // parameter DEBOUNCE_THRESHOLD = 150000; // 150,000 cycles / 12.288 MHz = 12.2 ms
+    parameter DEBOUNCE_THRESHOLD = 150000; // 150,000 cycles / 12.288 MHz = 12.2 ms
+
     // FOR SIMULATION ONLY
-    parameter DEBOUNCE_THRESHOLD = 10; // 150,000 cycles / 12.288 MHz = 12.2 ms
+    //parameter DEBOUNCE_THRESHOLD = 10; // 150,000 cycles / 12.288 MHz = 12.2 ms
 
     logic  [19:0] counter;      // Counter to measure stable time (20 bits for 1M)
     reg  internal_state;      // An internal register to hold the stable state

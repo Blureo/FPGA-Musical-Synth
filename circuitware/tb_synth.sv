@@ -45,7 +45,7 @@ synth dut
     .synth_key12(synth_key12),
     .i2s_sd(i2s_sd),
     .i2s_ws(i2s_ws),
-    .i2s_bclk(i2s_bclk),
+    .i2s_bclk(i2s_bclk),s
     .bit_counter(bit_counter),
     .tone_half_period(half_period)
 );
@@ -99,6 +99,37 @@ initial begin
 
     repeat (64) begin
         $display("tone_period=%d, bit-counter=%d, i2s_sd=%b, i2s_ws=%b", half_period, bit_counter, i2s_sd, i2s_ws);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
+        @(posedge i2s_bclk);
         @(posedge i2s_bclk);
         #1;
     end

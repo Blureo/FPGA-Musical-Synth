@@ -19,9 +19,14 @@ module synth
     output logic i2s_sd,
     output logic i2s_ws,
     output logic i2s_bclk, // 3.028 MHz –> 48 kHz sample rate
-    output logic [4:0] bit_counter,
 
-    output logic [7:0] tone_half_period
+    output logic LED_R,
+    output logic LED_G,
+    output logic LED_B
+
+    // SIMULATION ONLY
+    // output logic [4:0] bit_counter
+    // output logic [7:0] tone_half_period
 );
 
     logic debounced_key1;
@@ -37,7 +42,7 @@ module synth
     logic debounced_key11;
     logic debounced_key12;
 
-    // logic [7:0] half_period;
+    logic [7:0] tone_half_period;
 
     wave_period_selector tone_period_selector
     (
@@ -55,7 +60,8 @@ module synth
         .key10(debounced_key10),
         .key11(debounced_key11),
         .key12(debounced_key12),
-        .current_half_period(tone_half_period)
+        .current_half_period(tone_half_period),
+        .test_LED_R(LED_R)
     );
 
     i2s_transmitter transmitter
@@ -66,79 +72,93 @@ module synth
         .bit_clock(i2s_bclk),
         .word_select(i2s_ws),
         .sound_data(i2s_sd),
-        .bit_counter(bit_counter)
+        .test_LED_B(LED_B)
+        // SIMULATION ONLY
+        // .bit_counter(bit_counter)
     );
 
 // key debouncing modules
     debouncer key1_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key1),
         .clean_signal(debounced_key1)
     );
     debouncer key2_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key2),
         .clean_signal(debounced_key2)
     );
     debouncer key3_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key3),
         .clean_signal(debounced_key3)
     );
     debouncer key4_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key4),
         .clean_signal(debounced_key4)
     );
     debouncer key5_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key5),
         .clean_signal(debounced_key5)
     );
     debouncer key6_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key6),
         .clean_signal(debounced_key6)
     );
     debouncer key7_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key7),
         .clean_signal(debounced_key7)
     );
     debouncer key8_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key8),
         .clean_signal(debounced_key8)
     );
     debouncer key9_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key9),
         .clean_signal(debounced_key9)
     );
     debouncer key10_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key10),
         .clean_signal(debounced_key10)
     );
     debouncer key11_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key11),
         .clean_signal(debounced_key11)
     );
     debouncer key12_debounce
     (
         .clk(master_clk),
+        .rst(reset),
         .raw_signal(synth_key12),
         .clean_signal(debounced_key12)
     );
