@@ -1,4 +1,4 @@
-# FPGA-Synth
+# FPGA-Synthesizer
 A musical synthesizer based on the ICE40 FPGA
 
 Video demonstration: https://youtu.be/o0nXdgJRZlI
