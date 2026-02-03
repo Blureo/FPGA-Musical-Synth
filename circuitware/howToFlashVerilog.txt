@@ -11,13 +11,13 @@ set pin variables with their pin number on the FPGA from pico2-ice.pdf
 Step 3:
 generate .json file (example.json)
 command:
-yosys -p "synth_ice40 -top synth -json synth.json" synth.sv wave_period_selector.sv i2s_transmitter.sv debouncer.sv
+yosys -p "synth_ice40 -top synth -json synth.json" blink.sv 
 
 
 Step 4:
 generate .asc file (example.asc)
 command:
-nextpnr-ice40 --up5k --json synth.json --pcf synth.pcf --asc synth.asc
+nextpnr-ice40 --up5k --json blink.json --pcf blink.pcf --asc blink.asc
 
 
 Step 5:
