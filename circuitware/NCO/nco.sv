@@ -3,6 +3,7 @@ module nco
     input logic rst
     input logic master_clk,
     input logic tone_clk,
+    input logic nco_mute,
     input logic [31:0] accumulator_increment_value 
 };
     // Waveform ROM
@@ -18,7 +19,7 @@ module nco
         if (!rst_n) begin
             // Reset the register to 0
             accumulator_value <= 32'h0;
-        end else begin
+        end else if (!nco_mute)begin
             accumulator_value <= accumulator_value + accumulator_increment_value;
         end
     end
