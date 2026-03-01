@@ -14,10 +14,11 @@ module i2s_transmitter
     // output logic [4:0] bit_counter
 );
 
-    logic [3:0] bit_clock_timer; // divides 12.288 MHz clock by 16 = 1.536 MHz
-    logic [4:0] bit_counter; // keeps track of where we are in the I2S transmission loop
-    logic [15:0] sound_bits; // holds the sound sample that is currently being transmitted
-    logic [7:0] tone_timer; // the longest tone half-period should be 92 bit-clk cycles, so ~6.5 bits of space needed
+    logic [3:0]  bit_clock_timer;    // divides 24.576 MHz clock down to 1.536 MHz
+    logic [4:0]  bit_counter;        // keeps track of where we are in the I2S transmission loop
+    logic [15:0] sound_bits;         // holds the sound sample that is currently being transmitted
+    logic [15:0] banked_sound_bits;  // holds the sound sample we get from nco
+
 
     always_ff @(posedge clk or negedge rst) begin
         if (!rst) begin
@@ -38,8 +39,8 @@ module i2s_transmitter
             bit_counter <= 31; // goes to 31, for 32 bits total, 16 bits each for left and right channels (right is silent in our case)
             sound_data  <= 0;
             word_select <= 0;
-            tone_timer  <= 0;
             sound_bits  <= 0;
+            banked_sound_bits <= 0;
             test_LED_B  <= 1;
         end
         else begin
@@ -62,7 +63,8 @@ module i2s_transmitter
 
             // get new sound data
             if  (bit_counter == 31) begin
-                sound_bits <= new_sound_sample;
+                sound_bits <= banked_sound_bits;
+                banked_sound_bits <= new_sound_sample;
             end
 
             if (bit_counter == 14) test_LED_B <= ~test_LED_B;
