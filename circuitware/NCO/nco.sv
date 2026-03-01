@@ -19,7 +19,7 @@ module nco
 {
     input logic rst
     input logic master_clk,
-    input logic tone_clk,
+    input logic sample_en,
     input logic nco_mute,
     input logic [31:0] accumulator_increment_value 
 };
@@ -35,17 +35,36 @@ module nco
     logic [15:0] sample;
     logic [15:0] slope;
 
-    always_comb @(posedge clk or negedge rst) begin
+    logic ready_to_interpolate;
+    logic read_roms;
+    logic multiply;
+
+    // A state machine to sequentially process things and output a sample at 48kHz
+    always_ff @(posedge master_clk or negedge rst) begin
         if (!rst_n or nco_mute) begin
             // Reset the register to 0
             accumulator_value <= 32'h0;
             sample <= 16'h0;
-        end else begin
+            slope <= 16'h0;
+            ready_to_interpolate <= 0;
+        end else if (sample_flag) begin // The sample flag is brought high whenever the 48kHz clock hits a rising edge.
+            sample_flag <= 0;
             accumulator_value <= accumulator_value + accumulator_increment_value;
+            read_roms <= 1;
+        end else if (read_roms) begin
+            read_roms <= 0;
             sample <= waveform_rom[accumulator_value[31:26]]; // Take 5 MSbs of the accumulator and get the value in the waveform rom at that address.
             slope <= waveform_slope_rom[accumulator_value[31:26]]; // Take 5 MSbs of the accumulator and get the value in the waveform slope rom at that address.
+            multiply <= 1; // At this point we're ready to do the multiplication and add it back to the sample
+        end else if (multiply) begin
+            
+            multiply <= 0; // Run this after we've finished multiplying
+        end
+    end
 
-            // Here, we need to mulitply the slope by the least significant 27 bits of the accumulator value, then bitshift right by 27 bits. Then that value gets added to the sample.
+    always_ff @(posedge master_clk) begin
+        if (sample_en) begin // This runs at 48kHz
+            sample_flag <= 1;
         end
     end
 
