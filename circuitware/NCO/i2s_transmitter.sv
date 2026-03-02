@@ -1,7 +1,7 @@
 module i2s_transmitter
 (
     input  logic clk, // 24.576 MHz
-    input  logic bit_clk_enable,
+    input  logic bit_clk_en,
     input  logic rst,
     input  logic [15:0] new_sound_sample,
 
@@ -9,17 +9,17 @@ module i2s_transmitter
     output logic word_select,
     output logic sound_data,
 
-    output logic test_LED_B,
+    output logic test_LED_B
 
     // ONLY FOR SIMULATION
-    output logic [4:0] testing_bit_counter
+    //output logic [4:0] testing_bit_counter
 );
 
     logic [4:0]  bit_counter;        // keeps track of where we are in the I2S transmission loop
     logic [15:0] sound_bits;         // holds the sound sample that is currently being transmitted
     logic [15:0] banked_sound_bits;  // holds the sound sample we get from nco
 
-    assign testing_bit_counter = bit_counter;
+    //assign testing_bit_counter = bit_counter;
 
     always_ff @(posedge clk or negedge rst) begin
         if (!rst) begin
@@ -30,7 +30,7 @@ module i2s_transmitter
             banked_sound_bits <= 0;
             test_LED_B  <= 1;
         end
-        else if (bit_clk_enable) begin
+        else if (bit_clk_en) begin
             // incrementation –> because register is 0-31 (2^5), which is what we want, we let roll-over reset it to zero
             bit_counter <= bit_counter + 1;
 

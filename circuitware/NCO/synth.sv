@@ -186,4 +186,16 @@ module synth
         .sample_li_offset(sample_li_offset)
     );
 
+    i2s_transmitter transmitter
+    (
+        .clk(master_clock),
+        .bit_clk_en(bit_clock_enable),
+        .rst(reset),
+        .new_sound_sample(nco_output_sample),
+        .bit_clock(i2s_bclk),
+        .word_select(i2s_ws),
+        .sound_data(i2s_sd),
+        .test_LED_B(LED_BLUE)
+    );
+
 endmodule
