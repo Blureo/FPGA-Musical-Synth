@@ -10,11 +10,11 @@ module tb_nco;
     logic bit_clk_en;
     logic nco_mute;
     logic [31:0] accumulator_increment_value;
-    logic [15:0] sample_output;
+    logic signed [15:0] sample_output;
 
     // Only needed for debugging
-    logic [31:0] accumulator_value;
-    logic [15:0] sample_li_offset;
+    logic signed [31:0] accumulator_value;
+    logic signed [15:0] sample_li_offset;
 
     int print_count = 0;
 
@@ -47,7 +47,7 @@ module tb_nco;
 
     initial begin
         rst = 0;
-        accumulator_increment_value = 32'h800000;
+        accumulator_increment_value = 32'h2000000;
 
         #CLK_PERIOD;
         #CLK_PERIOD;

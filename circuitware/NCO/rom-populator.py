@@ -13,7 +13,11 @@ waveform_slope_rom = []
 
 for i in range(32):
     if i == 31:
-        waveform_slope_rom.append((waveform_rom[0]-waveform_rom[i])*4)
+        if PERIODIC:
+            waveform_slope_rom.append((waveform_rom[0]-waveform_rom[i])*4)
+        else:
+            # If not defined as periodic (we want a discontinuity) then use the second to last slope as the last slope.
+            waveform_slope_rom.append(waveform_slope_rom[30])
     else:
         waveform_slope_rom.append((waveform_rom[i+1]-waveform_rom[i])*4)
 
