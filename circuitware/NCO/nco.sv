@@ -87,9 +87,6 @@ module nco
             sample_output <= sample + sample_li_offset;
             add <= 0;
         end
-    end
-
-    always_ff @(posedge master_clk) begin
         if (sample_clk_en) begin // This runs at 48kHz
             sample_flag <= 1;
         end
