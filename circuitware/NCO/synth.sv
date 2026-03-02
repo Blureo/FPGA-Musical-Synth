@@ -43,6 +43,8 @@ module synth
     reg [31:0] nco_increment_value;
     logic nco_mute;
 
+    logic signed [15:0] nco_output_sample;
+
     clk_div clock_divider
     (
         .master_clk(master_clock),
@@ -53,7 +55,7 @@ module synth
 
     debouncer key1_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key1),
         .clean_signal(debounced_key1)
@@ -61,7 +63,7 @@ module synth
 
     debouncer key2_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key2),
         .clean_signal(debounced_key2)
@@ -69,7 +71,7 @@ module synth
 
     debouncer key3_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key3),
         .clean_signal(debounced_key3)
@@ -77,7 +79,7 @@ module synth
 
     debouncer key4_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key4),
         .clean_signal(debounced_key4)
@@ -85,7 +87,7 @@ module synth
 
     debouncer key5_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key5),
         .clean_signal(debounced_key5)
@@ -93,7 +95,7 @@ module synth
 
     debouncer key6_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key6),
         .clean_signal(debounced_key6)
@@ -101,7 +103,7 @@ module synth
 
     debouncer key7_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key7),
         .clean_signal(debounced_key7)
@@ -109,7 +111,7 @@ module synth
 
     debouncer key8_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key8),
         .clean_signal(debounced_key8)
@@ -117,7 +119,7 @@ module synth
 
     debouncer key9_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key9),
         .clean_signal(debounced_key9)
@@ -125,7 +127,7 @@ module synth
 
     debouncer key10_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key10),
         .clean_signal(debounced_key10)
@@ -133,7 +135,7 @@ module synth
 
     debouncer key11_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key11),
         .clean_signal(debounced_key11)
@@ -141,7 +143,7 @@ module synth
 
     debouncer key12_debounce
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .raw_signal(bouncy_key12),
         .clean_signal(debounced_key12)
@@ -149,7 +151,7 @@ module synth
 
     tone_frequency_calculator key_input
     (
-        .clk(master_clk),
+        .clk(master_clock),
         .rst(reset),
         .key1(debounced_key1),
         .key2(debounced_key2),
@@ -167,5 +169,21 @@ module synth
         .nco_mute(nco_mute),
         .test_LED_R(LED_RED)
     )
+
+    // Only needed for debugging
+    logic signed [31:0] accumulator_value;
+    logic signed [15:0] sample_li_offset;
+
+    nco numerically_controlled_oscillator
+    (
+        .rst(reset),
+        .master_clk(master_clock),
+        .sample_clk_en(sample_clock_enable),
+        .nco_mute(nco_mute),
+        .accumulator_increment_value(nco_increment_value),
+        .sample_output(nco_output_sample),
+        .accumulator_value(accumulator_value),
+        .sample_li_offset(sample_li_offset)
+    );
 
 endmodule
