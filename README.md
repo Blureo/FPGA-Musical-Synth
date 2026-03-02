@@ -3,15 +3,15 @@ A musical synthesizer based on the ICE40 FPGA
 
 Video demonstration: https://youtu.be/o0nXdgJRZlI
 
-### Status: under active reconstruction
+### Status: under active reconstruction, but NCO sine wave synthesis now works!
 #### Recounstruction information:
-The project is currently being revised to employ a numerically controlled oscillator (NCO) to replace the current method of synthesis. After this method of synthesis has been tested and employed, the following will items will be worked on:
+The synth now makes sine waves by the Numerically-Controlled Oscillator (NCO)! This opens the door to make any kind of wave we want just by updating the ROMs. We are now working on adding in our own multiplication algorithm, and after that, we will begin work on:
 ##### 1. Multiple Key Press Support:
 > This could be done a variety of ways, either by averaging frequencies together or by using multiple NCOs at once. How this ends up getting accomplished will be decided on later.
 ##### 2. Supporting more keys:
 > The current idea is to use a shift register and read each key sequentially. This could also be done by using multiple MUX's, which would grant a some amount of parallelism in reading which keys are being pressed.
 
-#### The functional build:
+#### The previous build: (square wave synthesis)
 The wave_period_selector method of synthesis used is described by this process:
 > wave_period_selector sends the half-period of the frequency (musical note) associated with the key pressed to i2s_transmitter. i2s_transmitter sends a square wave via I2S that oscillates every half-period (the one sent to it by wave_period_selector) to an I2S DAC. This generates a square wave at the desired frequency.
 
@@ -24,7 +24,7 @@ Currently, the synthesizer only supports one key press at a time. If multiple ke
 
 ### Software Tools:
 ##### 1. Synthesis:
-> OSS-CAD-SUITE is being used for ICE40 synthesis.
+> OSS-CAD-SUITE is being used for iCE40 synthesis.
 ##### 2. Simulation:
 > Icarus Verilog (iverilog) is being used for test bench simulation and other debugging. Verilator may replace icarus if it is decided that it is superior for testbenching this project's verilog modules.
 ##### 3. HDL:
