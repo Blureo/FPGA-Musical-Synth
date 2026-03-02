@@ -56,7 +56,18 @@ module nco
 
     // A state machine to sequentially process things and output a sample at 48kHz
     always_ff @(posedge master_clk or negedge rst) begin
-        if (!rst || nco_mute) begin
+        if (!rst) begin
+            // Reset the register to 0
+            accumulator_value <= 32'h0;
+            sample <= 16'h0;
+            sample_output <= 16'h0;
+            slope <= 16'h0;
+            sample_flag <= 0;
+            read_roms <= 0;
+            multiply <= 0;
+            add <= 0;
+        end
+        else if (nco_mute) begin
             // Reset the register to 0
             accumulator_value <= 32'h0;
             sample <= 16'h0;

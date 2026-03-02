@@ -18,7 +18,7 @@ yosys -p "synth_ice40 -top synth -json synth.json" synth.sv debouncer.sv clock_d
 Step 4:
 generate .asc file (example.asc)
 command:
-nextpnr-ice40 --up5k --json blink.json --pcf blink.pcf --asc blink.asc
+nextpnr-ice40 --up5k --json synth.json --pcf synth.pcf --asc synth.asc
 
 
 Step 5:
