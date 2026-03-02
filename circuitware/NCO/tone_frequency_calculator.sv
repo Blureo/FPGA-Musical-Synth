@@ -18,7 +18,7 @@ module tone_frequency_calculator
     input  logic key11,
     input  logic key12,
 
-    output reg [15:0] nco_increment_value,
+    output reg [31:0] nco_increment_value,
     output logic nco_mute, // boolean
 
     output logic test_LED_R
@@ -29,7 +29,7 @@ module tone_frequency_calculator
     always_comb begin
         if (!rst) mute = 1; 
 
-        next_nco_accumulator_value = 0;
+        next_nco_increment_value = 0;
         test_LED_R = 1;
 
         if      (key1)  next_nco_increment_value = 32'b00000001011001010010110000000000; // 261.6*32/48E3 = 0.1744 = 0b0.00101100101001011 =    00000_001011001010010110000000000
@@ -44,10 +44,10 @@ module tone_frequency_calculator
         else if (key10) next_nco_increment_value = 32'b00000010010110001011111100000000; // 440.0*32/48E3 = 0.2933 = 0b0.0100101100010111111  = 00000_010010110001011111100000000
         else if (key11) next_nco_increment_value = 32'b00000010011111001000010010000000; // 466.2*32/48E3 = 0.3108 = 0b0.01001111100100001001 = 00000_010011111001000010010000000
         else if (key12) next_nco_increment_value = 32'b00000010101000100101011010000000; // 493.9*32/48E3 = 0.3293 = 0b0.01010100010010101101 = 00000_010101000100101011010000000
-        else next_nco_accumulator_value = 0;
+        else next_nco_increment_value = 0;
 
-        nco_accumulator_value = next_nco_accumulator_value;
-        if (nco_accumulator_value > 0) begin
+        nco_increment_value = next_nco_increment_value;
+        if (nco_increment_value > 0) begin
             test_LED_R = 0;
             mute = 0;
         end

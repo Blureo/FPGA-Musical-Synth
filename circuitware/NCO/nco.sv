@@ -66,20 +66,24 @@ module nco
             read_roms <= 0;
             multiply <= 0;
             add <= 0;
-        end else if (sample_flag) begin // The sample flag is brought high whenever the 48kHz clock hits a rising edge.
+        end 
+        else if (sample_flag) begin // The sample flag is brought high whenever the 48kHz clock hits a rising edge.
             sample_flag <= 0;
             accumulator_value <= accumulator_value + accumulator_increment_value;
             read_roms <= 1;
-        end else if (read_roms) begin
+        end 
+        else if (read_roms) begin
             read_roms <= 0;
             sample <= waveform_rom[accumulator_value[31:27]]; // Take 5 MSbs of the accumulator and get the value in the waveform rom at that address.
             slope <= waveform_slope_rom[accumulator_value[31:27]]; // Take 5 MSbs of the accumulator and get the value in the waveform slope rom at that address.
             multiply <= 1; // At this point we're ready to do the multiplication before we add it back to the sample
-        end else if (multiply) begin
+        end 
+        else if (multiply) begin
             sample_li_offset <= (($signed({16'h0, accumulator_value[26:0]}) * (slope >>> 2)) >>> 27); // This will be replaced with booth's algorithm in the future
             multiply <= 0; // Run this after we've finished multiplying
             add <= 1;
-        end else if (add) begin
+        end 
+        else if (add) begin
             sample_output <= sample + sample_li_offset;
             add <= 0;
         end
