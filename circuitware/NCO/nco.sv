@@ -30,13 +30,21 @@ module nco
     // Waveform Slope ROM
     logic [15:0] waveform_slope_rom [0:31];
 
+    // Populate rom data
+    initial begin
+        $readmemh("waveform_rom.mem", waveform_rom);
+        $readmemh("waveform_slope_rom.mem", waveform_slope_rom);
+    end
+
     // 32 bit accumulator
     logic [31:0] accumulator_value;
 
+    // Linear interpolation stuff
     logic [15:0] sample;
     logic [15:0] slope;
     logic [15:0] sample_li_offset;
 
+    // Sequential state machine logic
     logic read_roms;
     logic multiply;
     logic add;
@@ -47,6 +55,7 @@ module nco
             // Reset the register to 0
             accumulator_value <= 32'h0;
             sample <= 16'h0;
+            sample_output <= 16'h0;
             slope <= 16'h0;
             sample_flag <= 0;
             read_roms <= 0;
