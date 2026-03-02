@@ -42476,7 +42476,7 @@
             "cell_src": "synth.sv:152.31-171.6",
             "module": "tone_frequency_calculator",
             "module_hdlname": "tone_frequency_calculator",
-            "module_src": "tone_frequency_calculator.sv:1.1-57.10"
+            "module_src": "tone_frequency_calculator.sv:1.1-56.10"
           },
           "port_directions": {
           },
@@ -75603,7 +75603,7 @@
           "bits": [ "0", "0", "0", "0", "0", "0", "0", 2384, 2385, 2386, 2387, 2388, 2389, 2390, 2391, 2392, "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
           "attributes": {
             "hdlname": "key_input nco_increment_value",
-            "src": "tone_frequency_calculator.sv:21.23-21.42",
+            "src": "tone_frequency_calculator.sv:20.23-20.42",
             "unused_bits": "7 8 9 10 11 12 13 14 15"
           }
         },
@@ -75612,7 +75612,7 @@
           "bits": [ "0", "0", "0", "0", "0", "0", "0", 2384, 2385, 2386, 2387, 2388, 2389, 2390, 2391, 2392 ],
           "attributes": {
             "hdlname": "key_input next_nco_increment_value",
-            "src": "tone_frequency_calculator.sv:27.16-27.40",
+            "src": "tone_frequency_calculator.sv:26.16-26.40",
             "unused_bits": "7 8 9 10 11 12 13 14 15"
           }
         },
@@ -75629,7 +75629,7 @@
           "bits": [ 20 ],
           "attributes": {
             "hdlname": "key_input test_LED_R",
-            "src": "tone_frequency_calculator.sv:24.18-24.28"
+            "src": "tone_frequency_calculator.sv:23.18-23.28"
           }
         },
         "master_clock": {

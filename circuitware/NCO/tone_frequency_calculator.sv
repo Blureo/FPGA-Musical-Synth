@@ -5,7 +5,6 @@ module tone_frequency_calculator
     input  logic rst,
     
     input  logic key1,
-    input  logic key1,
     input  logic key2,
     input  logic key3,
     input  logic key4,
