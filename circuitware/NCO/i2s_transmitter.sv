@@ -22,6 +22,7 @@ module i2s_transmitter
 
     //assign testing_bit_counter = bit_counter;
 
+    // Might remove this and use bit_clk_en in the future, but for now it works.
     always_ff @(posedge clk or negedge rst) begin
         if (!rst) begin
             bit_clock_timer <= 0;
