@@ -9,6 +9,8 @@ The synth now makes sine waves by the Numerically-Controlled Oscillator (NCO)! T
 > This could be done a variety of ways, either by averaging frequencies together or by using multiple NCOs at once. How this ends up getting accomplished will be decided on later.
 ##### 2. Supporting more keys:
 > The current idea is to use a shift register and read each key sequentially. This could also be done by using multiple MUX's, which would grant a some amount of parallelism in reading which keys are being pressed.
+##### 2. ADSR Envolope (Attack, Delay, Sustain, Release):
+> An amplitude envolope would greatly improve the articulation of the synth sound and make things more dynamic.
 ##### 3. A PCB for it all
 > The first iteration will likely interface with the development board (potentially the first few). However, the final iteration should be independent of a development board.
 
