@@ -19,9 +19,10 @@ module nco
 {
     input logic rst
     input logic master_clk,
-    input logic sample_en,
+    input logic sample_clk_en,
     input logic nco_mute,
     input logic [31:0] accumulator_increment_value 
+    output logic [15:0] sample_output
 };
     // Waveform ROM
     logic [15:0] waveform_rom [0:31];
@@ -34,10 +35,11 @@ module nco
 
     logic [15:0] sample;
     logic [15:0] slope;
+    logic [15:0] sample_li_offset;
 
-    logic ready_to_interpolate;
     logic read_roms;
     logic multiply;
+    logic add;
 
     // A state machine to sequentially process things and output a sample at 48kHz
     always_ff @(posedge master_clk or negedge rst) begin
@@ -46,7 +48,10 @@ module nco
             accumulator_value <= 32'h0;
             sample <= 16'h0;
             slope <= 16'h0;
-            ready_to_interpolate <= 0;
+            sample_flag <= 0;
+            read_roms <= 0;
+            multiply <= 0;
+            add <= 0;
         end else if (sample_flag) begin // The sample flag is brought high whenever the 48kHz clock hits a rising edge.
             sample_flag <= 0;
             accumulator_value <= accumulator_value + accumulator_increment_value;
@@ -55,15 +60,19 @@ module nco
             read_roms <= 0;
             sample <= waveform_rom[accumulator_value[31:26]]; // Take 5 MSbs of the accumulator and get the value in the waveform rom at that address.
             slope <= waveform_slope_rom[accumulator_value[31:26]]; // Take 5 MSbs of the accumulator and get the value in the waveform slope rom at that address.
-            multiply <= 1; // At this point we're ready to do the multiplication and add it back to the sample
+            multiply <= 1; // At this point we're ready to do the multiplication before we add it back to the sample
         end else if (multiply) begin
-            
+            sample_li_offset <= sample * slope; // This will be replaced with booth's algorithm in the future
             multiply <= 0; // Run this after we've finished multiplying
+            add <= 1;
+        end else if (add) begin
+            sample_output = sample + sample_li_offset;
+            add <= 0;
         end
     end
 
     always_ff @(posedge master_clk) begin
-        if (sample_en) begin // This runs at 48kHz
+        if (sample_clk_en) begin // This runs at 48kHz
             sample_flag <= 1;
         end
     end

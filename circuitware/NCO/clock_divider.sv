@@ -1,8 +1,8 @@
-"""
+/*
 This module divides the input 24.576 MHz clock signal down to the required clock signals
 by using enable signals. These enable signals will be pulsed on for one of the master clock
 signals, but will only be pulsed at either 1.536MHz or 48kHz.
-"""
+*/
 
 module clk_div
 {
