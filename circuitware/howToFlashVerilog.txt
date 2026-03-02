@@ -12,6 +12,7 @@ Step 3:
 generate .json file (example.json)
 command:
 yosys -p "synth_ice40 -top synth -json synth.json" blink.sv 
+yosys -p "synth_ice40 -top synth -json synth.json" synth.sv debouncer.sv clock_divider.sv i2s_transmitter.sv tone_frequency_calculator.sv nco.sv
 
 
 Step 4:

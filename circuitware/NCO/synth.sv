@@ -168,7 +168,7 @@ module synth
         .nco_increment_value(nco_increment_value),
         .nco_mute(nco_mute),
         .test_LED_R(LED_RED)
-    )
+    );
 
     // Only needed for debugging
     logic signed [31:0] accumulator_value;
