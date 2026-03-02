@@ -16,14 +16,17 @@ own register, in the process delaying the output by one sample, but preventing t
 */
 
 module nco
-{
-    input logic rst
+(
+    input logic rst,
     input logic master_clk,
     input logic sample_clk_en,
     input logic nco_mute,
-    input logic [31:0] accumulator_increment_value 
-    output logic [15:0] sample_output
-};
+    input logic [31:0] accumulator_increment_value,
+    output logic [15:0] sample_output,
+    output logic [31:0] accumulator_value,
+    output logic [15:0] sample_li_offset
+    //output logic [16:0] sample
+);
     // Waveform ROM
     logic [15:0] waveform_rom [0:31];
 
@@ -37,21 +40,23 @@ module nco
     end
 
     // 32 bit accumulator
-    logic [31:0] accumulator_value;
+    //logic [31:0] accumulator_value;
 
     // Linear interpolation stuff
     logic [15:0] sample;
     logic [15:0] slope;
-    logic [15:0] sample_li_offset;
+    //logic [15:0] sample_li_offset;
 
     // Sequential state machine logic
     logic read_roms;
     logic multiply;
     logic add;
+    
+    logic sample_flag;
 
     // A state machine to sequentially process things and output a sample at 48kHz
     always_ff @(posedge master_clk or negedge rst) begin
-        if (!rst_n or nco_mute) begin
+        if (!rst || nco_mute) begin
             // Reset the register to 0
             accumulator_value <= 32'h0;
             sample <= 16'h0;
@@ -71,11 +76,11 @@ module nco
             slope <= waveform_slope_rom[accumulator_value[31:26]]; // Take 5 MSbs of the accumulator and get the value in the waveform slope rom at that address.
             multiply <= 1; // At this point we're ready to do the multiplication before we add it back to the sample
         end else if (multiply) begin
-            sample_li_offset <= sample * slope; // This will be replaced with booth's algorithm in the future
+            sample_li_offset <= ((({16'h0, accumulator_value[26:0]}) * (slope >> 2)) >> 27); // This will be replaced with booth's algorithm in the future
             multiply <= 0; // Run this after we've finished multiplying
             add <= 1;
         end else if (add) begin
-            sample_output = sample + sample_li_offset;
+            sample_output <= sample + sample_li_offset;
             add <= 0;
         end
     end

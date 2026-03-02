@@ -5,18 +5,18 @@ signals, but will only be pulsed at either 1.536MHz or 48kHz.
 */
 
 module clk_div
-{
+(
     input logic master_clk,
     input logic rst,
-    output logic sample_clk_en
+    output logic sample_clk_en,
     output logic bit_clk_en
-};
+);
 
     logic [8:0] sample_clk_counter; // 48kHz Sample Clock
     logic [3:0] bit_clk_counter; // 1.536MHz Bit Clock
 
     always_ff @(posedge master_clk or negedge rst) begin
-        if (!rst_n) begin
+        if (!rst) begin
             sample_clk_counter <= 9'b0;
             bit_clk_counter <= 4'b0;
 
