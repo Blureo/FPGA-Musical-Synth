@@ -1,7 +1,15 @@
-# FPGA-Musical-Synth
+FPGA-Musical-Synth
+---
 A musical synthesizer based on the iCE40 FPGA that outputs I2S audio.
 
 Video demonstration of sine wave synth: https://youtu.be/_ejQGvuSiI
+
+---
+
+### 27 May 2026: Board bring-up is in progress!
+The PCBs have been ordered and delivered! All that remains for that part is to bring the boards up and perform PCBA.
+![picture of front of manufactured PCB](kicad/key_input_module/rev_1/physical_front.jpg)
+![picture of back of manufactured PCB](kicad/key_input_module/rev_1/physical_back.jpg)
 
 ---
 
@@ -11,7 +19,7 @@ The PCB for the input module has been completed. Each module represents 1 octave
 2. **Daisy Chaining**: Shift registers can be daisy-chained to create a long line of parallel input with just one serial output. To take advantage of this, we designed the modules to daisy chain together, with each additional module in the line giving the user an additional octave.
 3. **No Wasted PCBs**: PCB minimum order quantities (often 5) do not produce unused boards because these modules are made to be daisy-chained. If I have to order a minimum of 5 boards, and that's all I want to order, I get 5 octaves for my synth.
 
-![top of the key input PCB](kicad/rev_1/front.png)
+![top of the key input PCB](kicad/key_input_module/rev_1/front.png)
 
 > The order for this PCB will be placed within a week or two; I am waiting to order it alongside PCBs for a class I'm currently taking. Because this PCB was designed to daisy-chain duplicates together, it was not designed with a place for an FPGA or the development board; that will be a separate module.
 
