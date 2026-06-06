@@ -1,0 +1,127 @@
+{
+	"abstract" : true,
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries"
+		],
+		"files" : 
+		[
+			"/Users/jesse/Software/Pico/pico-ice-sdk/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 51,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "pico_ice_usb::@7047437562719168ba02",
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "pico_ice_preinit_common::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pico_multicore::@9a13c1d01dbacaad7b33"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pico_unique_id::@36eb7f981929521e7e8e"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "tinyusb_device::@36e52159cb4e937c58c5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "tinyusb_board::@36e52159cb4e937c58c5"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "pico_ice_preinit_common::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pico_multicore::@9a13c1d01dbacaad7b33"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pico_unique_id::@36eb7f981929521e7e8e"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "tinyusb_device::@36e52159cb4e937c58c5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "tinyusb_board::@36e52159cb4e937c58c5"
+		}
+	],
+	"interfaceSources" : 
+	[
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_usb.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/tinyuf2_main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/tinyuf2_board.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/tinyuf2_include.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"name" : "pico_ice_usb",
+	"paths" : 
+	{
+		"build" : "pico_ice_sdk_build",
+		"source" : "/Users/jesse/Software/Pico/pico-ice-sdk"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"interfaceSourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3
+			],
+			"name" : "Source Files",
+			"sourceIndexes" : []
+		}
+	],
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

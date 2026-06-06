@@ -1,0 +1,5 @@
+{
+    "cmake.buildEnvironment": {
+        "PATH": "/Users/jesse/Software/oss-cad-suite/bin:${env:PATH}"
+    }
+}

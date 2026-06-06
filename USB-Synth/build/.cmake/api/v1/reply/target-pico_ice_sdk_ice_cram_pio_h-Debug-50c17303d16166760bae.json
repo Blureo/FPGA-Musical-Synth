@@ -1,0 +1,100 @@
+{
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"pico_generate_pio_header",
+			"add_custom_command"
+		],
+		"files" : 
+		[
+			"/Users/jesse/Software/Pico/pico-sdk/tools/CMakeLists.txt",
+			"/Users/jesse/Software/Pico/pico-ice-sdk/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 252,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 260,
+				"parent" : 1
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "pico_ice_sdk_ice_cram_pio_h::@7047437562719168ba02",
+	"name" : "pico_ice_sdk_ice_cram_pio_h",
+	"orderDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "pioasm::@7047437562719168ba02"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "pico_ice_sdk_build",
+		"source" : "/Users/jesse/Software/Pico/pico-ice-sdk"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/pico_ice_sdk_build/CMakeFiles/pico_ice_sdk_ice_cram_pio_h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/pico_ice_sdk_build/CMakeFiles/pico_ice_sdk_ice_cram_pio_h.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/pico_ice_sdk_build/ice_cram.pio.h.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

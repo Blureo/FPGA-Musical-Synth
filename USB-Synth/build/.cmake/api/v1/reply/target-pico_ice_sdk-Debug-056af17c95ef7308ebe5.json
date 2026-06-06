@@ -1,0 +1,183 @@
+{
+	"abstract" : true,
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"add_dependencies",
+			"pico_generate_pio_header"
+		],
+		"files" : 
+		[
+			"/Users/jesse/Software/Pico/pico-ice-sdk/CMakeLists.txt",
+			"/Users/jesse/Software/Pico/pico-sdk/tools/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 22,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 265,
+				"parent" : 3
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "pico_ice_sdk::@7047437562719168ba02",
+	"interfaceCompileDependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "pico_ice_preinit_common::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_flash::@49aa2da6eab3b3a59dee"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_gpio::@ef60da2a8d08f1b751dd"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_pio::@e01f79172179c7736f7b"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_spi::@eafa2cefbeacba1047b8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_dma::@0fb4e5fe7d96da9dd1e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_uart::@6760ac481d50fbd80aa4"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pico_stdlib::@bdd74ac35cb4d45b5067"
+		}
+	],
+	"interfaceLinkLibraries" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "pico_ice_preinit_common::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_flash::@49aa2da6eab3b3a59dee"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_gpio::@ef60da2a8d08f1b751dd"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_pio::@e01f79172179c7736f7b"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_spi::@eafa2cefbeacba1047b8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_dma::@0fb4e5fe7d96da9dd1e8"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "hardware_uart::@6760ac481d50fbd80aa4"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "pico_stdlib::@bdd74ac35cb4d45b5067"
+		}
+	],
+	"interfaceSources" : 
+	[
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_flash.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_led.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga_data.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"path" : "/Users/jesse/Software/Pico/pico-ice-sdk/src/pico-sdk_ice_hal.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"name" : "pico_ice_sdk",
+	"orderDependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "pico_ice_sdk_ice_cram_pio_h::@7047437562719168ba02"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "pico_ice_sdk_build",
+		"source" : "/Users/jesse/Software/Pico/pico-ice-sdk"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"interfaceSourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			],
+			"name" : "Source Files",
+			"sourceIndexes" : []
+		}
+	],
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

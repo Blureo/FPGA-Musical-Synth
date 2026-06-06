@@ -6607,7 +6607,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74HC_HCT165.pdf"
 			(at 99.06 102.87 0)
 			(hide yes)
 			(show_name no)
@@ -7828,7 +7828,7 @@
 				(justify bottom)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74HC_HCT165.pdf"
 			(at 55.88 102.87 0)
 			(hide yes)
 			(show_name no)

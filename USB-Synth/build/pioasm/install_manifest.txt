@@ -1,0 +1,5 @@
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm-install/pioasm/pioasm
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm-install/pioasm/pioasmTargets.cmake
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm-install/pioasm/pioasmTargets-release.cmake
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm-install/pioasm/pioasmConfig.cmake
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm-install/pioasm/pioasmConfigVersion.cmake

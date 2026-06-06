@@ -1,0 +1,7 @@
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/pioasm.dir
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/edit_cache.dir
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/rebuild_cache.dir
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/list_install_components.dir
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/install.dir
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/install/local.dir
+/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/pioasm/CMakeFiles/install/strip.dir
