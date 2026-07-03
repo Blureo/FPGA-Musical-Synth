@@ -68,9 +68,9 @@ include CMakeFiles/USB-Synth_i2s_receiver_pio_h.dir/progress.make
 
 CMakeFiles/USB-Synth_i2s_receiver_pio_h: i2s_receiver.pio.h
 
-i2s_receiver.pio.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/i2s_receiver.pio
+i2s_receiver.pio.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/i2s_receiver.pio
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating i2s_receiver.pio.h"
-	pioasm-install/pioasm/pioasm -o c-sdk -v 1 /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/i2s_receiver.pio /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/i2s_receiver.pio.h
+	pioasm-install/pioasm/pioasm -o c-sdk -v 1 /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/i2s_receiver.pio /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/i2s_receiver.pio.h
 
 CMakeFiles/USB-Synth_i2s_receiver_pio_h.dir/codegen:
 .PHONY : CMakeFiles/USB-Synth_i2s_receiver_pio_h.dir/codegen

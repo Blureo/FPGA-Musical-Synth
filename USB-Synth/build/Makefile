@@ -233,30 +233,6 @@ pico_ice_sdk_ice_cram_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico_ice_sdk_build/CMakeFiles/pico_ice_sdk_ice_cram_pio_h.dir/build.make pico_ice_sdk_build/CMakeFiles/pico_ice_sdk_ice_cram_pio_h.dir/build
 .PHONY : pico_ice_sdk_ice_cram_pio_h/fast
 
-USB-audio_functions.o: USB-audio_functions.cpp.o
-.PHONY : USB-audio_functions.o
-
-# target to build an object file
-USB-audio_functions.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o
-.PHONY : USB-audio_functions.cpp.o
-
-USB-audio_functions.i: USB-audio_functions.cpp.i
-.PHONY : USB-audio_functions.i
-
-# target to preprocess a source file
-USB-audio_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.i
-.PHONY : USB-audio_functions.cpp.i
-
-USB-audio_functions.s: USB-audio_functions.cpp.s
-.PHONY : USB-audio_functions.s
-
-# target to generate assembly for a file
-USB-audio_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.s
-.PHONY : USB-audio_functions.cpp.s
-
 Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.o: Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.c.o
 .PHONY : Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.o
 
@@ -2257,101 +2233,125 @@ Users/jesse/Software/Pico/tinyusb/src/tusb.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/tusb.c.s
 .PHONY : Users/jesse/Software/Pico/tinyusb/src/tusb.c.s
 
-dI2Srx.o: dI2Srx.cpp.o
-.PHONY : dI2Srx.o
+src/USB-audio_functions.o: src/USB-audio_functions.cpp.o
+.PHONY : src/USB-audio_functions.o
 
 # target to build an object file
-dI2Srx.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o
-.PHONY : dI2Srx.cpp.o
+src/USB-audio_functions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o
+.PHONY : src/USB-audio_functions.cpp.o
 
-dI2Srx.i: dI2Srx.cpp.i
-.PHONY : dI2Srx.i
+src/USB-audio_functions.i: src/USB-audio_functions.cpp.i
+.PHONY : src/USB-audio_functions.i
 
 # target to preprocess a source file
-dI2Srx.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/dI2Srx.cpp.i
-.PHONY : dI2Srx.cpp.i
+src/USB-audio_functions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.i
+.PHONY : src/USB-audio_functions.cpp.i
 
-dI2Srx.s: dI2Srx.cpp.s
-.PHONY : dI2Srx.s
+src/USB-audio_functions.s: src/USB-audio_functions.cpp.s
+.PHONY : src/USB-audio_functions.s
 
 # target to generate assembly for a file
-dI2Srx.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/dI2Srx.cpp.s
-.PHONY : dI2Srx.cpp.s
+src/USB-audio_functions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.s
+.PHONY : src/USB-audio_functions.cpp.s
 
-interrupts.o: interrupts.cpp.o
-.PHONY : interrupts.o
+src/drivers/dI2Srx.o: src/drivers/dI2Srx.cpp.o
+.PHONY : src/drivers/dI2Srx.o
 
 # target to build an object file
-interrupts.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/interrupts.cpp.o
-.PHONY : interrupts.cpp.o
+src/drivers/dI2Srx.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o
+.PHONY : src/drivers/dI2Srx.cpp.o
 
-interrupts.i: interrupts.cpp.i
-.PHONY : interrupts.i
+src/drivers/dI2Srx.i: src/drivers/dI2Srx.cpp.i
+.PHONY : src/drivers/dI2Srx.i
 
 # target to preprocess a source file
-interrupts.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/interrupts.cpp.i
-.PHONY : interrupts.cpp.i
+src/drivers/dI2Srx.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.i
+.PHONY : src/drivers/dI2Srx.cpp.i
 
-interrupts.s: interrupts.cpp.s
-.PHONY : interrupts.s
+src/drivers/dI2Srx.s: src/drivers/dI2Srx.cpp.s
+.PHONY : src/drivers/dI2Srx.s
 
 # target to generate assembly for a file
-interrupts.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/interrupts.cpp.s
-.PHONY : interrupts.cpp.s
+src/drivers/dI2Srx.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.s
+.PHONY : src/drivers/dI2Srx.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/interrupts.o: src/interrupts.cpp.o
+.PHONY : src/interrupts.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/interrupts.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o
+.PHONY : src/interrupts.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/interrupts.i: src/interrupts.cpp.i
+.PHONY : src/interrupts.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/interrupts.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/interrupts.cpp.i
+.PHONY : src/interrupts.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/interrupts.s: src/interrupts.cpp.s
+.PHONY : src/interrupts.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/interrupts.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/interrupts.cpp.s
+.PHONY : src/interrupts.cpp.s
 
-usb_descriptors.o: usb_descriptors.c.o
-.PHONY : usb_descriptors.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-usb_descriptors.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/usb_descriptors.c.o
-.PHONY : usb_descriptors.c.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-usb_descriptors.i: usb_descriptors.c.i
-.PHONY : usb_descriptors.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-usb_descriptors.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/usb_descriptors.c.i
-.PHONY : usb_descriptors.c.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-usb_descriptors.s: usb_descriptors.c.s
-.PHONY : usb_descriptors.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-usb_descriptors.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/usb_descriptors.c.s
-.PHONY : usb_descriptors.c.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/usb_descriptors.o: src/usb_descriptors.c.o
+.PHONY : src/usb_descriptors.o
+
+# target to build an object file
+src/usb_descriptors.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o
+.PHONY : src/usb_descriptors.c.o
+
+src/usb_descriptors.i: src/usb_descriptors.c.i
+.PHONY : src/usb_descriptors.i
+
+# target to preprocess a source file
+src/usb_descriptors.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.i
+.PHONY : src/usb_descriptors.c.i
+
+src/usb_descriptors.s: src/usb_descriptors.c.s
+.PHONY : src/usb_descriptors.s
+
+# target to generate assembly for a file
+src/usb_descriptors.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/USB-Synth.dir/build.make CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.s
+.PHONY : src/usb_descriptors.c.s
 
 # Help Target
 help:
@@ -2370,9 +2370,6 @@ help:
 	@echo "... USB-Synth"
 	@echo "... bs2_default"
 	@echo "... bs2_default_library"
-	@echo "... USB-audio_functions.o"
-	@echo "... USB-audio_functions.i"
-	@echo "... USB-audio_functions.s"
 	@echo "... Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.o"
 	@echo "... Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.i"
 	@echo "... Users/jesse/Software/Pico/pico-ice-sdk/src/ice_cram.s"
@@ -2623,18 +2620,21 @@ help:
 	@echo "... Users/jesse/Software/Pico/tinyusb/src/tusb.o"
 	@echo "... Users/jesse/Software/Pico/tinyusb/src/tusb.i"
 	@echo "... Users/jesse/Software/Pico/tinyusb/src/tusb.s"
-	@echo "... dI2Srx.o"
-	@echo "... dI2Srx.i"
-	@echo "... dI2Srx.s"
-	@echo "... interrupts.o"
-	@echo "... interrupts.i"
-	@echo "... interrupts.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... usb_descriptors.o"
-	@echo "... usb_descriptors.i"
-	@echo "... usb_descriptors.s"
+	@echo "... src/USB-audio_functions.o"
+	@echo "... src/USB-audio_functions.i"
+	@echo "... src/USB-audio_functions.s"
+	@echo "... src/drivers/dI2Srx.o"
+	@echo "... src/drivers/dI2Srx.i"
+	@echo "... src/drivers/dI2Srx.s"
+	@echo "... src/interrupts.o"
+	@echo "... src/interrupts.i"
+	@echo "... src/interrupts.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/usb_descriptors.o"
+	@echo "... src/usb_descriptors.i"
+	@echo "... src/usb_descriptors.s"
 .PHONY : help
 
 

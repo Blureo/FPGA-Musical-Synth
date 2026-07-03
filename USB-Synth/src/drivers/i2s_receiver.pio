@@ -1,0 +1,56 @@
+.program i2s_receiver
+
+.define BCK_PIN 23
+.define LRCK_PIN 24
+
+// Find the start of a left channel frame by waiting for LRCK to be high, then falling low.
+public_entry_point:
+    wait 1 gpio LRCK_PIN
+    wait 0 gpio LRCK_PIN    // At this exact moment, LRCK just fell. This is SCLK FE1.
+
+    // At FE1, the LSB of the previous right channel is on the line.
+    // The MSB of the left channel will be placed on SCLK FE2.
+    wait 1 gpio BCK_PIN     // Wait for SCLK RE1 (LSB of right channel)
+    wait 0 gpio BCK_PIN     // Wait for SCLK FE2 (MSB of left channel placed)
+
+    // Now we are perfectly aligned! We just enter an infinite loop of reading 32 bits.
+.wrap_target
+left_channel:
+    set x, 15
+left_loop:
+    wait 1 gpio BCK_PIN
+    in pins, 1
+    wait 0 gpio BCK_PIN
+    jmp x-- left_loop
+    push noblock
+
+right_channel:
+    set x, 15
+right_loop:
+    wait 1 gpio BCK_PIN
+    in pins, 1
+    wait 0 gpio BCK_PIN
+    jmp x-- right_loop
+    push noblock
+.wrap
+
+% c-sdk {
+static inline void i2s_receiver_program_init(PIO pio, uint8_t sm, uint8_t offset, uint8_t sd_pin, uint8_t bck_pin, uint8_t ws_pin) {
+	pio_gpio_init(pio, sd_pin);
+	pio_gpio_init(pio, bck_pin);
+	pio_gpio_init(pio, ws_pin);
+
+    gpio_disable_pulls(sd_pin);
+    gpio_disable_pulls(bck_pin);
+    gpio_disable_pulls(ws_pin);
+
+    pio_sm_config sm_config = i2s_receiver_program_get_default_config(offset);
+    sm_config_set_in_pins(&sm_config, sd_pin);
+    sm_config_set_in_shift(&sm_config, false, false, 0); // shift left, no autopush
+    sm_config_set_fifo_join(&sm_config, PIO_FIFO_JOIN_RX);
+    pio_sm_init(pio, sm, offset, &sm_config);
+
+	uint32_t pin_mask = (1u << sd_pin) | (1u << bck_pin) | (1u << ws_pin);
+	pio_sm_set_pindirs_with_mask(pio, sm, 0, pin_mask); // set all specified pins as inputs (0 = input, 1 = output)
+}
+%}

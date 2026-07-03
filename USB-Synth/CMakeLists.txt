@@ -30,15 +30,15 @@ pico_sdk_init()
 # 2. When adding a directory outside the source tree, you MUST specify a binary directory name (e.g., "pico_ice_sdk_build")
 add_subdirectory(${PICO_ICE_SDK_PATH} pico_ice_sdk_build)
 
-set(I2S_PIO ${CMAKE_CURRENT_LIST_DIR}/i2s_receiver.pio)
+set(I2S_PIO ${CMAKE_CURRENT_LIST_DIR}/src/drivers/i2s_receiver.pio)
 
 # add the local files
 add_executable(${CMAKE_PROJECT_NAME}
-    main.cpp
-    dI2Srx.cpp
-    interrupts.cpp
-    USB-audio_functions.cpp
-    usb_descriptors.c
+    src/main.cpp
+    src/drivers/dI2Srx.cpp
+    src/interrupts.cpp
+    src/USB-audio_functions.cpp
+    src/usb_descriptors.c
 )
 
 pico_generate_pio_header(${CMAKE_PROJECT_NAME}
@@ -59,6 +59,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
+    ${CMAKE_CURRENT_LIST_DIR}/src
+    ${CMAKE_CURRENT_LIST_DIR}/src/drivers
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
@@ -75,6 +77,7 @@ set(VERILOG_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/circuitware/tone_frequency_calculator.sv 
     ${CMAKE_CURRENT_LIST_DIR}/circuitware/multiplication.sv
     ${CMAKE_CURRENT_LIST_DIR}/circuitware/nco.sv
+    ${CMAKE_CURRENT_LIST_DIR}/circuitware/shift_register_input.sv
 )
 
 # Define your PCF constraints file
@@ -85,14 +88,14 @@ add_custom_target(bitstream.h
     # 1. Yosys: Compile all files and use 'synth' as the top module
     COMMAND yosys -p 'synth_ice40 -abc9 -top synth -json bitstream.json' ${VERILOG_SOURCES}
     
-    # 2. Nextpnr: Route using the UP5k sg48 package, 48MHz clock, and your custom .pcf
-    COMMAND nextpnr-ice40 --package sg48 --up5k --freq 48 --top synth --pcf ${PCF_FILE} --json bitstream.json --asc bitstream.asc
+    # 2. Nextpnr: Route using the UP5k sg48 package, 24.576MHz clock, and your custom .pcf
+    COMMAND nextpnr-ice40 --package sg48 --up5k --freq 24.576 --top synth --pcf ${PCF_FILE} --json bitstream.json --asc bitstream.asc
     
     # 3. Icepack: Generate the binary bitstream
     COMMAND icepack bitstream.asc bitstream.bin
     
     # 4. Bin2Header: Convert binary bitstream into a C header for the Pico firmware
-    COMMAND python ${CMAKE_CURRENT_LIST_DIR}/bin2header.py bitstream.bin >bitstream.h
+    COMMAND python3 ${CMAKE_CURRENT_LIST_DIR}/bin2header.py bitstream.bin >bitstream.h
 )
 add_dependencies(${CMAKE_PROJECT_NAME} bitstream.h)
 

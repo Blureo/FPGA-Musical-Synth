@@ -72,75 +72,75 @@ include CMakeFiles/USB-Synth.dir/flags.make
 CMakeFiles/USB-Synth.dir/codegen:
 .PHONY : CMakeFiles/USB-Synth.dir/codegen
 
-CMakeFiles/USB-Synth.dir/main.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
-CMakeFiles/USB-Synth.dir/main.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/main.cpp
-CMakeFiles/USB-Synth.dir/main.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/USB-Synth.dir/main.cpp.o"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/main.cpp.o -MF CMakeFiles/USB-Synth.dir/main.cpp.o.d -o CMakeFiles/USB-Synth.dir/main.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/main.cpp
+CMakeFiles/USB-Synth.dir/src/main.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
+CMakeFiles/USB-Synth.dir/src/main.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/main.cpp
+CMakeFiles/USB-Synth.dir/src/main.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/USB-Synth.dir/src/main.cpp.o"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/src/main.cpp.o -MF CMakeFiles/USB-Synth.dir/src/main.cpp.o.d -o CMakeFiles/USB-Synth.dir/src/main.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/main.cpp
 
-CMakeFiles/USB-Synth.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/main.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/main.cpp > CMakeFiles/USB-Synth.dir/main.cpp.i
+CMakeFiles/USB-Synth.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/src/main.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/main.cpp > CMakeFiles/USB-Synth.dir/src/main.cpp.i
 
-CMakeFiles/USB-Synth.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/main.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/main.cpp -o CMakeFiles/USB-Synth.dir/main.cpp.s
+CMakeFiles/USB-Synth.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/src/main.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/main.cpp -o CMakeFiles/USB-Synth.dir/src/main.cpp.s
 
-CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
-CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/dI2Srx.cpp
-CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o -MF CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o.d -o CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/dI2Srx.cpp
+CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
+CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/dI2Srx.cpp
+CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o -MF CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o.d -o CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/dI2Srx.cpp
 
-CMakeFiles/USB-Synth.dir/dI2Srx.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/dI2Srx.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/dI2Srx.cpp > CMakeFiles/USB-Synth.dir/dI2Srx.cpp.i
+CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/dI2Srx.cpp > CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.i
 
-CMakeFiles/USB-Synth.dir/dI2Srx.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/dI2Srx.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/dI2Srx.cpp -o CMakeFiles/USB-Synth.dir/dI2Srx.cpp.s
+CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/dI2Srx.cpp -o CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.s
 
-CMakeFiles/USB-Synth.dir/interrupts.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
-CMakeFiles/USB-Synth.dir/interrupts.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/interrupts.cpp
-CMakeFiles/USB-Synth.dir/interrupts.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/USB-Synth.dir/interrupts.cpp.o"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/interrupts.cpp.o -MF CMakeFiles/USB-Synth.dir/interrupts.cpp.o.d -o CMakeFiles/USB-Synth.dir/interrupts.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/interrupts.cpp
+CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
+CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/interrupts.cpp
+CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o -MF CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o.d -o CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/interrupts.cpp
 
-CMakeFiles/USB-Synth.dir/interrupts.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/interrupts.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/interrupts.cpp > CMakeFiles/USB-Synth.dir/interrupts.cpp.i
+CMakeFiles/USB-Synth.dir/src/interrupts.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/src/interrupts.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/interrupts.cpp > CMakeFiles/USB-Synth.dir/src/interrupts.cpp.i
 
-CMakeFiles/USB-Synth.dir/interrupts.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/interrupts.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/interrupts.cpp -o CMakeFiles/USB-Synth.dir/interrupts.cpp.s
+CMakeFiles/USB-Synth.dir/src/interrupts.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/src/interrupts.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/interrupts.cpp -o CMakeFiles/USB-Synth.dir/src/interrupts.cpp.s
 
-CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
-CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/USB-audio_functions.cpp
-CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o -MF CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o.d -o CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/USB-audio_functions.cpp
+CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o: CMakeFiles/USB-Synth.dir/flags.make
+CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/USB-audio_functions.cpp
+CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o -MF CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o.d -o CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/USB-audio_functions.cpp
 
-CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.i"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/USB-audio_functions.cpp > CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.i
+CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.i"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/USB-audio_functions.cpp > CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.i
 
-CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.s"
-	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/USB-audio_functions.cpp -o CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.s
+CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.s"
+	/opt/homebrew/bin/arm-none-eabi-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/USB-audio_functions.cpp -o CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.s
 
-CMakeFiles/USB-Synth.dir/usb_descriptors.c.o: CMakeFiles/USB-Synth.dir/flags.make
-CMakeFiles/USB-Synth.dir/usb_descriptors.c.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/usb_descriptors.c
-CMakeFiles/USB-Synth.dir/usb_descriptors.c.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/USB-Synth.dir/usb_descriptors.c.o"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/usb_descriptors.c.o -MF CMakeFiles/USB-Synth.dir/usb_descriptors.c.o.d -o CMakeFiles/USB-Synth.dir/usb_descriptors.c.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/usb_descriptors.c
+CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o: CMakeFiles/USB-Synth.dir/flags.make
+CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/usb_descriptors.c
+CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o: CMakeFiles/USB-Synth.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o"
+	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o -MF CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o.d -o CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o -c /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/usb_descriptors.c
 
-CMakeFiles/USB-Synth.dir/usb_descriptors.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/USB-Synth.dir/usb_descriptors.c.i"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/usb_descriptors.c > CMakeFiles/USB-Synth.dir/usb_descriptors.c.i
+CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.i"
+	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/usb_descriptors.c > CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.i
 
-CMakeFiles/USB-Synth.dir/usb_descriptors.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/USB-Synth.dir/usb_descriptors.c.s"
-	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/usb_descriptors.c -o CMakeFiles/USB-Synth.dir/usb_descriptors.c.s
+CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.s"
+	/opt/homebrew/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/usb_descriptors.c -o CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.s
 
 CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga.c.o: CMakeFiles/USB-Synth.dir/flags.make
 CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga.c.o: /Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga.c
@@ -1394,11 +1394,11 @@ CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-sdk/src/rp2_common/pico_
 
 # Object files for target USB-Synth
 USB__Synth_OBJECTS = \
-"CMakeFiles/USB-Synth.dir/main.cpp.o" \
-"CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o" \
-"CMakeFiles/USB-Synth.dir/interrupts.cpp.o" \
-"CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o" \
-"CMakeFiles/USB-Synth.dir/usb_descriptors.c.o" \
+"CMakeFiles/USB-Synth.dir/src/main.cpp.o" \
+"CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o" \
+"CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o" \
+"CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o" \
+"CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o" \
 "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga.c.o" \
 "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_flash.c.o" \
 "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_led.c.o" \
@@ -1493,11 +1493,11 @@ USB__Synth_OBJECTS = \
 # External object files for target USB-Synth
 USB__Synth_EXTERNAL_OBJECTS =
 
-USB-Synth.elf: CMakeFiles/USB-Synth.dir/main.cpp.o
-USB-Synth.elf: CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o
-USB-Synth.elf: CMakeFiles/USB-Synth.dir/interrupts.cpp.o
-USB-Synth.elf: CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o
-USB-Synth.elf: CMakeFiles/USB-Synth.dir/usb_descriptors.c.o
+USB-Synth.elf: CMakeFiles/USB-Synth.dir/src/main.cpp.o
+USB-Synth.elf: CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o
+USB-Synth.elf: CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o
+USB-Synth.elf: CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o
+USB-Synth.elf: CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o
 USB-Synth.elf: CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_fpga.c.o
 USB-Synth.elf: CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_flash.c.o
 USB-Synth.elf: CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-ice-sdk/src/ice_led.c.o

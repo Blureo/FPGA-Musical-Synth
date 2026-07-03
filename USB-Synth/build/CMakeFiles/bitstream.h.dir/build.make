@@ -73,11 +73,12 @@ CMakeFiles/bitstream.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synt
 CMakeFiles/bitstream.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/tone_frequency_calculator.sv
 CMakeFiles/bitstream.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/multiplication.sv
 CMakeFiles/bitstream.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/nco.sv
+CMakeFiles/bitstream.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/shift_register_input.sv
 CMakeFiles/bitstream.h: /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/synth.pcf
-	yosys -p 'synth_ice40 -abc9 -top synth -json bitstream.json' /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/synth.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/debouncer.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/clock_divider.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/i2s_transmitter.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/tone_frequency_calculator.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/multiplication.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/nco.sv
-	nextpnr-ice40 --package sg48 --up5k --freq 48 --top synth --pcf /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/synth.pcf --json bitstream.json --asc bitstream.asc
+	yosys -p 'synth_ice40 -abc9 -top synth -json bitstream.json' /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/synth.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/debouncer.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/clock_divider.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/i2s_transmitter.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/tone_frequency_calculator.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/multiplication.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/nco.sv /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/shift_register_input.sv
+	nextpnr-ice40 --package sg48 --up5k --freq 24.576 --top synth --pcf /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/circuitware/synth.pcf --json bitstream.json --asc bitstream.asc
 	icepack bitstream.asc bitstream.bin
-	python /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/bin2header.py bitstream.bin >bitstream.h
+	python3 /Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/bin2header.py bitstream.bin >bitstream.h
 
 CMakeFiles/bitstream.h.dir/codegen:
 .PHONY : CMakeFiles/bitstream.h.dir/codegen

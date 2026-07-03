@@ -1,13 +1,13 @@
-set_io master_clock     35
-set_io reset            25
+set_io master_clock                 9
+set_io reset                        25
 
-set_io shift_reg_latch  28
-set_io shift_reg_clock  32
-set_io shift_reg_data   36
+set_io shift_register_serial_data   11
+set_io shift_register_latch         48
+set_io shift_register_clock         10
 
-set_io i2s_sd           21  // Pico GPIO 26
-set_io i2s_bclk         18  // Pico GPIO 27
-set_io i2s_ws           9   // Pico GPIO 28
+set_io i2s_bclk                     19 # GPIO 23
+set_io i2s_ws                       26 # GPIO 24
+set_io i2s_sd                       23 # GPIO 25
 
-set_io  LED_BLUE        40
-set_io  LED_RED         41
+set_io  LED_BLUE                    40
+set_io  LED_RED                     41

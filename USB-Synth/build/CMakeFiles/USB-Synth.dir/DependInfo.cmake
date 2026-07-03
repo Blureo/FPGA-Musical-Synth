@@ -92,6 +92,8 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "."
   "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers"
   "/Users/jesse/Software/Pico/pico-ice-sdk/include"
   "pico_ice_sdk_build"
   "/Users/jesse/Software/Pico/pico-sdk/src/rp2_common/pico_atomic/include"
@@ -240,12 +242,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/jesse/Software/Pico/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o" "gcc" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.o.d"
   "/Users/jesse/Software/Pico/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o" "gcc" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c.o.d"
   "/Users/jesse/Software/Pico/tinyusb/src/tusb.c" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/tusb.c.o" "gcc" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/tinyusb/src/tusb.c.o.d"
-  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/usb_descriptors.c" "CMakeFiles/USB-Synth.dir/usb_descriptors.c.o" "gcc" "CMakeFiles/USB-Synth.dir/usb_descriptors.c.o.d"
-  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/USB-audio_functions.cpp" "CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/USB-audio_functions.cpp.o.d"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/usb_descriptors.c" "CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o" "gcc" "CMakeFiles/USB-Synth.dir/src/usb_descriptors.c.o.d"
   "/Users/jesse/Software/Pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/Users/jesse/Software/Pico/pico-sdk/src/rp2_common/pico_cxx_options/new_delete.cpp.o.d"
-  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/dI2Srx.cpp" "CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/dI2Srx.cpp.o.d"
-  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/interrupts.cpp" "CMakeFiles/USB-Synth.dir/interrupts.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/interrupts.cpp.o.d"
-  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/main.cpp" "CMakeFiles/USB-Synth.dir/main.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/main.cpp.o.d"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/USB-audio_functions.cpp" "CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/src/USB-audio_functions.cpp.o.d"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/drivers/dI2Srx.cpp" "CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/src/drivers/dI2Srx.cpp.o.d"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/interrupts.cpp" "CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/src/interrupts.cpp.o.d"
+  "/Users/jesse/Desktop/Project/FPGA-Musical-Synth/USB-Synth/src/main.cpp" "CMakeFiles/USB-Synth.dir/src/main.cpp.o" "gcc" "CMakeFiles/USB-Synth.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
