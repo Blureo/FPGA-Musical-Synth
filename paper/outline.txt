@@ -1,0 +1,60 @@
+This is the outline for the paper
+
+0.   Abstract
+I.  Introduction
+    A. Square waves are easy in digital
+        1. mention the initial build
+        2. talk about how we do it
+    B. This Project
+        1. How this is different
+        2. coarse explanation of how its different from previous 
+            i. its an upgrade
+            ii. flexible
+II. Half-Period-based Oscillation (This will be merged into III)
+    A. How it works
+        1. Calculate half-period of wave in terms of # of clk cycles
+            i. This is not done real-time. Values are pre-calculated
+            ii. # of clk cycles for half-period of ƒ_desired = (int) ((Fs / ƒ_note)/2)
+        2. Send (# of clk cycles for half-period of ƒ_desired) to audio transmitter
+        3. Audio transmitter uses (# of clk cycles for half-period of ƒ_desired) as a timer to determine when to switch back and forth between high and low output samples
+    B. Downsides
+        1. imprecise for selecting frequencies 
+            i. You calculate how many clk cycles is a half-period
+            ii. You switch from +/- to -/+ every half-period
+            iii. accuracy of ƒ is dependent on how evenly the desired frequency divides into sample rate
+            iv. None of the tones were perfectly in tune, some were very out-of-tune
+        2. Difficult to make for anything but square waves
+            i. oscillation is based on a timer
+            ii. Unintuitive math: would have to shape desired waveform from a square wave using some sort of variable width mask. Likely use of too much multiplication
+    C. Potential Pros:
+        1. Good for use in certain use-cases
+            i. When you don't have a DAC
+            ii. When sound is just a means to an end (music not the goal; warning beeps?)
+III. Numerically-Controlled Oscillation
+    A. Sample Generation (From look-up table)
+        1. A look up table is used to get a sample starting point
+    B. Multiplication:
+        1. It uses multiplication to linearly interpolate between the coarse samples
+            i. This is easily done on time for next sample to go out
+        2. Booth's Radix 4
+            i. how do we justify this ;-; (Previously, with the combinational logic multiplication, it was increadibly space inefficient. It was doing 56 bit multiplication with just gates, no clock or cycles, and was probably something like 2^56 times bigger than what we're doing now.)
+    C. Advantages:
+        1. Can make any shape of waveform
+            i. Uses ROMs of waveforms
+            ii. 
+        2. extremely precise ƒ
+            i. ƒ not directly dependent on clk rate
+            ii. output samples interpolated from ROMs
+        3. Doesn't need much memory
+            i. Only 32 samples and 32 slopes between samples
+            ii. could likely be optimized by only storing a fraction of the wave. (But this does limit flexibility for choosing other wave shapes)
+    
+IV. Overview of how the system works
+    (Insert figure of the whole system structure here)
+    A. Key input
+    B. Calculate accumulator increment value (This is precalculated, and value is selected given the current key pressed)
+    C. Calculate sample
+        // 1. Half-Period-based Oscillation
+        2. Numerically-Controlled Oscillation
+    D. Send out sample
+        1. I2S Audio
